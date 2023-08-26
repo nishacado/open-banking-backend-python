@@ -20,6 +20,10 @@ CORS(app)
 # load the model from the saved file
 model = joblib.load('path_to_your_model.pkl')
 
+@app.route('/')
+def home():
+    return 'Server is running'
+
 @app.route('/predict', methods=['POST'])
 def predict():
     
