@@ -18,7 +18,7 @@ app = Flask(__name__)
 CORS(app)
 
 # load the model from the saved file
-model = joblib.load('path_to_your_model.pkl')
+model = joblib.load('path_to_your_model.pkl',trusted=True)
 
 @app.route('/predict', methods=['POST'])
 def predict():
