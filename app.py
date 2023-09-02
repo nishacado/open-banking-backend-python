@@ -15,7 +15,7 @@ import json
 import numpy as np
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 # load the model from the saved file
 model = joblib.load('path_to_your_model.pkl')
